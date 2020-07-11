@@ -1,0 +1,12 @@
+[submodule "shorten-url-client"]
+	path = shorten-url-client
+	url = git@github.com:danielcaballero/shorten-url-client.git
+[submodule "shorten-url-server"]
+	path = shorten-url-server
+	url = git@github.com:danielcaballero/shorten-url-server.git
+[submodule "server"]
+	path = server
+	url = git@github.com:danielcaballero/shorten-url-server.git
+[submodule "client"]
+	path = client
+	url = git@github.com:danielcaballero/shorten-url-client.git

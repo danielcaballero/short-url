@@ -1,0 +1,28 @@
+version: '3'
+
+services:  
+  client:
+    build: client
+    ports:
+      - "8001:8001"
+    environment:
+      - APP_VERSION=demo
+      - API_HOME=http://server:3000
+    depends_on: 
+        - "server"
+  server:
+    build: server
+    ports:
+      - "3000:3000"
+    environment:
+      - APP_VERSION=demo
+      - PORT=3000
+      - MONGODB_URI=mongodb://mongo:27017
+    depends_on:
+        - "mongo"
+    volumes: 
+      - "${PWD}/logs:/server/logs"   
+  mongo:
+    image: mongo:4.2
+    ports:
+      - "27017:27017"
